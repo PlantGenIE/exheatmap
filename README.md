@@ -1,2 +1,2 @@
 # exheatmap
-Previous version of exHeatmap
+Source code for exHeatmap
