@@ -1,0 +1,36 @@
+{
+    "data": {
+        "nodes": {
+            "0": {
+                "count": 1, 
+                "distance": 0, 
+                "objects": [
+                    "Potri.001G000200"
+                ], 
+                "features": [
+                    1.70783, 
+                    3.0997
+                ], 
+                "parent": 2
+            }, 
+            "1": {
+                "count": 1, 
+                "distance": 0, 
+                "objects": [
+                    "Potri.009G012300"
+                ], 
+                "features": [
+                    8.70193, 
+                    8.61952
+                ], 
+                "parent": 2
+            }, 
+            "2": {
+                "count": 2, 
+                "distance": 8.91, 
+                "left_child": 0, 
+                "right_child": 1
+            }
+        }
+    }
+}

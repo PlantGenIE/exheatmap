@@ -1,0 +1,5 @@
+#inchlib_set_host: spruce.plantphys.umu.se
+inchlib_set_user: chanaka
+inchlib_set_pass: shD1lshani#
+inchlib_set_database: popgenieDB_V3
+#1 david#84!

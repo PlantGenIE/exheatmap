@@ -1,0 +1,99 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>exHeatmap</title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+ 	<script src="javascript/kinetic-v5.1.0.min.js"></script> 
+ 	<script src="javascript/inchlib-1.2.0.min.js"></script>
+ 	
+ </head>
+ <body>
+ 	<div id="inchlib menu">
+ 		<table>
+ 			<tr>
+ 				<td>Distance function</td>
+			 	<td><select class="selbox" id="distfunc" name="distfunc"></select></td>
+			 </tr>
+			 <tr>
+			 	<td>Hierarchial clustering</td>
+			 	<td><select class="selbox" id="clustfunc" name="clustfuc"></select></td>
+			 <tr>
+			 	<td>Dendrogram</td>
+			 	<td>y:<input type="checkbox" name="dendroy" value="true" checked>
+			 		x:<input type="checkbox" name="dendrox" value="false">
+			 	</td>
+			 </tr>
+			<tr>
+					<td><input class="button" type="submit" value="Create heatmap"/></td><td>
+			</tr>
+		</table>
+ 	</div>
+ 	<div id="inchlib">
+	
+	</div>
+ </body>
+ </html>
+
+
+<script>
+
+		function runPythonScript(){
+			// -db -dbp pass.txt -dbs popgenieDB_V3 -dbtb wood -g Potri.001G000200,Potri.009G012300 -s K1-01,K1-02
+			$.post( "inchlib_clust.py", { 
+					db: undefined, 
+					dbs: "popgenieDB_V3", 
+					dbtb: "wood",
+					g: "Potri.001G000200,Potri.009G012300",
+					s: "K1-01,K1-02,K1-03,K1-04,K1-05"
+			})
+			.done(function(data){
+				startInchlib();
+			});
+		}
+
+		function startInchlib(){
+			//run when the whole page is loaded 
+			window.inchlib = new InCHlib({ 
+				//instantiate InCHlib 
+				target:"inchlib", 
+				//ID of a target HTML element 
+				metadata: true, 
+				//turn on the metadata 
+				column_metadata: true, 
+				//turn on the column metadata 
+				max_height: 1200, 
+				//set maximum height of visualization in pixels 
+				width: 1000, //set width of visualization in pixels 
+				heatmap_colors: "Greens", 
+				//set color scale for clustered data 
+				metadata_colors: "Reds", //set color scale for metadata 
+ 			}); 
+ 			inchlib.read_data_from_file("example.json"); //read input json file 
+ 			inchlib.draw(); //draw cluster heatmap 
+		}
+
+		$(document).ready(function() { 
+			runPythonScript();
+		});
+ 		/*$(document).ready(function() { 
+ 				//run when the whole page is loaded 
+ 				window.inchlib = new InCHlib({ 
+ 				//instantiate InCHlib 
+ 				target:"inchlib", 
+ 				//ID of a target HTML element 
+ 				metadata: true, 
+ 				//turn on the metadata 
+ 				column_metadata: true, 
+ 				//turn on the column metadata 
+ 				max_height: 1200, 
+ 				//set maximum height of visualization in pixels 
+ 				width: 1000, //set width of visualization in pixels 
+ 				heatmap_colors: "Greens", 
+ 				//set color scale for clustered data 
+ 				metadata_colors: "Reds", //set color scale for metadata 
+ 			}); 
+ 			inchlib.read_data_from_file("example.json"); //read input json file 
+ 			inchlib.draw(); //draw cluster heatmap 
+ 		}); */
+ 	</script>
