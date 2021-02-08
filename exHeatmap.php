@@ -1,8 +1,8 @@
 <?php  
 	?>  
 	<span style="float: right;color: red">&copy;</span>
-<link href="plugins/tour/css/poptour.css" rel="stylesheet"></link>	
-<link href="plugins/exheatmap/css/explot.css" rel="stylesheet"></link>
+<link href="css/poptour.css" rel="stylesheet"></link>	
+<link href="css/explot.css" rel="stylesheet"></link>
 <script type="text/javascript">
 var linkages = ["ward", "single", "complete", "average", "centroid", "median", "weighted"];
 var raw_linkages = ["ward", "centroid"];
@@ -12,13 +12,13 @@ var distances = {
 };
 var samples = ["experiment_2", "experiment_1", "experiment_3", "experiment_4"];
 </script>
- <head>
+ <head>c
  	<title>exHeatmap</title>
- 	<script src="plugins/exheatmap/javascript/kinetic-v5.1.0.min.js"></script> 
- 	<script src="plugins/exheatmap/javascript/inchlib-1.2.0.min.js"></script>
-	 <script src="plugins/exheatmap/javascript/jspdf.min.js"></script>
+ 	<script src="js/kinetic-v5.1.0.min.js"></script> 
+ 	<script src="js/inchlib-1.2.0.min.js"></script>
+	 <script src="js/jspdf.min.js"></script>
  </head>
- <span style="position: absolute" id="exheatmap_waiting"><img width="160px" src="plugins/gene/css/load1.gif" /></span> 
+ <span style="position: absolute" id="exheatmap_waiting"><img width="160px" src="img/load1.gif" /></span> 
  <div id="container"></div>
  <div id="alert-error" class="alert alert-info" style="margin-top:-20px !important;display:none;float:right">
   <a onclick="closeme2()" class="closex" data-dismiss="alert">×</a>
@@ -44,13 +44,13 @@ var samples = ["experiment_2", "experiment_1", "experiment_3", "experiment_4"];
   </tr>
   
 </table>
- <script src="plugins/exheatmap/javascript/init.js"></script> 
+ <script src="js/init.js"></script> 
 <style type="text/css" media="screen">
 .slide-out-div {
 	border-left: #9ac352 2px solid;
 	width: 240px;
 	padding: 20px;
-	background: url(plugins/exdraw/img/sidebar_background.png
+	background: url(img/sidebar_background.png
 ) no-repeat scroll 100% 100%;
 	line-height: 1;
 	position: absolute;
@@ -58,7 +58,7 @@ var samples = ["experiment_2", "experiment_1", "experiment_3", "experiment_4"];
 	right: -3px;
 }
 .handle {
-	background-image: url(plugins/exdraw/img//right_sidebar3.png);
+	background-image: url(/img/right_sidebar3.png);
 	width: 28px;
 	height: 134px;
 	display: block;
@@ -71,7 +71,7 @@ var samples = ["experiment_2", "experiment_1", "experiment_3", "experiment_4"];
 	background-repeat: no-repeat no-repeat;
 }
 	</style>
-    <script src="plugins/exdraw/js/jquery.tabSlideOut.v1.3.js"></script>
+    <script src="js/jquery.tabSlideOut.v1.3.js"></script>
          <script>
          $(function () {
          	$('.slide-out-div').tabSlideOut({
@@ -218,6 +218,6 @@ var samples = ["experiment_2", "experiment_1", "experiment_3", "experiment_4"];
   </g>
 </svg></div>
    <!-- <div id="plantgenie_box" style="left:1400px;border-radius:6px;top:420px; background:#fff;opacity:0.8;position:absolute">      </div> -->
-<script src="<?php print $GLOBALS['base_url']?>/plugins/tour/poptour.js"></script>
-<script src="<?php print $GLOBALS['base_url']?>/plugins/tour/exheatmap.js"></script>
-<script src="<?php print $GLOBALS['base_url']?>/plugins/tour/workflow.js"></script>
+<script src="js/poptour.js"></script>
+<script src="js/exheatmap.js"></script>
+<script src="js/workflow.js"></script>
